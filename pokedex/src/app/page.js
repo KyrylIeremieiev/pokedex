@@ -8,8 +8,14 @@ import {useState, useClient} from 'react';
 
 function Home() {
   const [pokemon, setPokemon] = useState(0);
+  const [data, setData] = useState(0)
   function search(){
-    console.log(pokemon)
+      fetch('https://pokeapi.co/api/v2/pokemon/' + pokemon)
+      .then(response =>{
+          return response.json();
+      }).then(data =>{
+          setData(data);
+      });
   }
   return (
     <main>
@@ -20,7 +26,7 @@ function Home() {
         <input type='button' className='search__button' onClick={search} value={'search'}/>
         
       </form>
-        <Type name={pokemon}></Type>
+        <Type name={data}></Type>
     </main>
   )
 }

@@ -5,7 +5,7 @@ const Type = (props) => {
   
     return (
         <div>
-            <p>{name}</p>
+            <p>{name["id"]}</p>
         </div>
     );
   };
