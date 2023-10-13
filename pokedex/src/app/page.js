@@ -2,6 +2,8 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import Type from './components/type';
+import Stats from './components/stats';
+import Sprite from './components/sprite';
 
 import {useState, useClient, useEffect} from 'react';
 // useClient();
@@ -48,7 +50,12 @@ function Home() {
       {loading ? (
         <p>Loading...</p> // Show loading message while data is being fetched
       ) : (
-          <Type name={data}></Type>
+          <div>
+            <h1 className='title'>{data.name}</h1>
+            <Sprite data={data}></Sprite>
+            <Type name={data}></Type>
+            <Stats data={data}></Stats>
+          </div>
       )}
         
     </main>
