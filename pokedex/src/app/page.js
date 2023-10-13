@@ -3,14 +3,33 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import Type from './components/type';
 
-import {useState, useClient} from 'react';
+import {useState, useClient, useEffect} from 'react';
 // useClient();
 
 function Home() {
-  const [pokemon, setPokemon] = useState(0);
+  const [pokemon, setPokemon] = useState('greninja');
   const [data, setData] = useState(0)
-  function search(){
-      fetch('https://pokeapi.co/api/v2/pokemon/' + pokemon)
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    async function start(){
+      await fetch('https://pokeapi.co/api/v2/pokemon/' + pokemon)
+      .then(response =>{
+          return response.json();
+          
+      }).then(data =>{
+          setData(data);
+          setLoading(false);
+      }).catch(error => {
+        console.error('Error fetching data:', error);
+        setLoading(false); // Set loading to false even if there's an error
+      });
+    }
+
+    start();
+    
+  }, []);
+  async function search(){
+      await fetch('https://pokeapi.co/api/v2/pokemon/' + pokemon)
       .then(response =>{
           return response.json();
       }).then(data =>{
@@ -26,7 +45,12 @@ function Home() {
         <input type='button' className='search__button' onClick={search} value={'search'}/>
         
       </form>
-        <Type name={data}></Type>
+      {loading ? (
+        <p>Loading...</p> // Show loading message while data is being fetched
+      ) : (
+          <Type name={data}></Type>
+      )}
+        
     </main>
   )
 }
