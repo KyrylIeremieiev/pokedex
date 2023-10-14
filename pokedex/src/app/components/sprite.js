@@ -7,6 +7,7 @@ const Sprite = (props) => {
         <div className='spriteSec'>
             <div className='sprite'>
                 <Image
+                    className='spriteImg'
                     src={data.sprites.front_default}
                     width={300}                     // Width of the image
                     height={200}

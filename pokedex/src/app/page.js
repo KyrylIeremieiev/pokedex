@@ -23,13 +23,14 @@ function Home() {
           setLoading(false);
       }).catch(error => {
         console.error('Error fetching data:', error);
-        setLoading(false); // Set loading to false even if there's an error
+        setLoading(false);
       });
     }
 
     start();
     
   }, []);
+
   async function search(){
       await fetch('https://pokeapi.co/api/v2/pokemon/' + pokemon)
       .then(response =>{
