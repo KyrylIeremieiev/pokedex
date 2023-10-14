@@ -7,6 +7,7 @@ const Sprite = (props) => {
         <div className='spriteSec'>
             <div className='sprite'>
                 <Image
+                    alt='sprite of this pokemon could not be found'
                     className='spriteImg'
                     src={data.sprites.front_default}
                     width={300}                     // Width of the image

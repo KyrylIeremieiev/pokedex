@@ -23,9 +23,14 @@ main{
 
 
 .search__input{
+  height: 2rem;
   width: 48%;
   border-radius: 0.5rem;
   border: 1px solid black;
+}
+
+.search__error{
+  color: #E3350D;
 }
 
 .search__button{
