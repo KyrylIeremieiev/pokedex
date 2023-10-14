@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import Type from './components/type';
 import Stats from './components/stats';
 import Sprite from './components/sprite';
+import Disc from './components/disc';
 
 import {useState, useClient, useEffect} from 'react';
 // useClient();
@@ -56,6 +57,7 @@ function Home() {
             <section className='mainSection'>
               <Sprite data={data}></Sprite>
               <section className='leftSection'>
+              <Disc pokemon={pokemon}></Disc>
                 <Type name={data}></Type>
                 <Stats data={data}></Stats>
               </section>
