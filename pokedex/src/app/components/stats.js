@@ -6,12 +6,14 @@ const Stats = (props) => {
     return (
         <div>
             <h2 className='types__title'>Stats</h2>
+            <section className='stat'>
             {stats.map((stat, index) => (
-            <li key={index}>
-                <p>{stat.stat.name}</p>
-                <p>{stat.base_stat}</p>
+            <li key={index} className='stat__card'>
+                <p className='stat__name'>{stat.stat.name}</p>
+                <p className='stat__stat'>{stat.base_stat}</p>
             </li>
         ))}
+            </section>
         </div>
     );
   };

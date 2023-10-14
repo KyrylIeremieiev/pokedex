@@ -52,9 +52,14 @@ function Home() {
       ) : (
           <div>
             <h1 className='title'>{data.name}</h1>
-            <Sprite data={data}></Sprite>
-            <Type name={data}></Type>
-            <Stats data={data}></Stats>
+            <section className='mainSection'>
+              <Sprite data={data}></Sprite>
+              <section className='leftSection'>
+                <Type name={data}></Type>
+                <Stats data={data}></Stats>
+              </section>
+            </section>
+            
           </div>
       )}
         

@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Sprite = (props) => {
     const { data } = props;
     return (
-        <div>
+        <div className='spriteSec'>
             <div className='sprite'>
                 <Image
                     src={data.sprites.front_default}
