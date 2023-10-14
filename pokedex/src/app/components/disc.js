@@ -19,7 +19,7 @@ const Disc= (props)=>{
           });
         }
         getDiscription()
-      }, []);
+      }, [pokemon]);
     return (
         <div>
 

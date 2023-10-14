@@ -13,6 +13,7 @@ function Home() {
   const [pokemon, setPokemon] = useState('greninja');
   const [data, setData] = useState(0)
   const [loading, setLoading] = useState(true);
+  const [discPokemon, setDiscPokemon] = useState('greninja')
   useEffect(() => {
     async function start(){
       await fetch('https://pokeapi.co/api/v2/pokemon/' + pokemon)
@@ -38,6 +39,7 @@ function Home() {
           return response.json();
       }).then(data =>{
           setData(data);
+          setDiscPokemon(pokemon);
       });
   }
   return (
@@ -61,7 +63,7 @@ function Home() {
             <section className='mainSection'>
               <Sprite data={data}></Sprite>
               <section className='leftSection'>
-              <Disc pokemon={pokemon}></Disc>
+              <Disc pokemon={discPokemon}></Disc>
                 <Type name={data}></Type>
                 <Stats data={data}></Stats>
               </section>
