@@ -43,10 +43,14 @@ function Home() {
   return (
     <main>
       <form className='search'>
-        <input className='search__input' onChange={(e)=>{
+        <label className='search__label'>Pokemon Search</label>
+        <div className='search__wrapper'>
+          <input className='search__input' onChange={(e)=>{
           setPokemon(e.target.value);
         }}/>
         <input type='button' className='search__button' onClick={search} value={'search'}/>
+        
+        </div>
         
       </form>
       {loading ? (

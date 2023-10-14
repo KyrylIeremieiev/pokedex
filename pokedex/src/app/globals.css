@@ -10,11 +10,45 @@ main{
   padding: 4rem;
 }
 
+.search__label{
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.search__wrapper{
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+
+
+.search__input{
+  width: 48%;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+}
+
+.search__button{
+  background: linear-gradient(to right, #E3350D, #EE6C2F);
+  border: none;
+  color: #ffffff;
+  width: 12rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+}
+
+.search__button:hover{
+  cursor: pointer;
+}
+
 .mainSection{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   
+}
+.title{
+  text-transform: uppercase;
 }
 
 
@@ -133,4 +167,10 @@ main{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.leftSection{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
